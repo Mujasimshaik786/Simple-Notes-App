@@ -1,0 +1,165 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: lightblue;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+/* Dark Mode Button */
+#toggle-dark-mode {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#toggle-dark-mode:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+header {
+    background: linear-gradient(to right,#007bff,#00d4ff);
+    color:wheat;
+    padding:20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Notes Container */
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+/*  For Each Note Card */
+.note-card {
+    background: pink;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 350px;
+    margin: 10px;
+    text-align: left;
+}
+.dark-mode .note-card {
+    background: peachpuff;
+    border:1px, solid #444;
+}
+.note-card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.note-card p {
+    color: #333;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+input,textarea {
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#note-title {
+    height: 40px;
+}
+
+#note-content {
+    height: 100px;
+}
+
+button {
+    background: linear-gradient(to left,#008080,#32CD32);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor:pointer;
+    margin: 5px;
+
+}
+
+button:hover {
+    background: linear-gradient(to right,#20B2AA,#ADFF2F);
+}
+
+.edit-btn {
+    background: linear-gradient(to right,#FFd700,#FFC107);
+    color: #333;
+}
+.edit-btn:hover {
+    background: linear-gradient(to left,#FFC107,#FFd700);
+    color: #333;
+}
+.delete-btn {
+    background: linear-gradient(to right,#dc3545,#c82333);
+}
+.delete-btn:hover {
+    background: linear-gradient(to left,#dc3545,#c82333);
+}
+
+
+.important-note h3 {
+    color: gold;  /* Highlight important notes */
+}
+
+.important-btn {
+    background: lightsalmon;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color:black;
+    cursor: pointer;
+}
+
+.important-btn:hover {
+    background: #dc3545;
+}
+
+.app-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease; /* Make sure to include this font */
+    
+    color: #000000;
+    text-shadow: 4px 4px 10px rgba(255,255,255,0.2); /* Soft Shadow */
+    padding: 15px;
+    border-radius: 8px;
+}
+.dark-mode .app-title {
+    color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+
+.dark-mode .note-card p {
+    color: black;
+}
+
+.dark-mode #toggle-dark-mode i {
+    content: "\f185";
+}

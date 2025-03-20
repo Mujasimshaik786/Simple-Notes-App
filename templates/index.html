@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Notes App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <button id="toggle-dark-mode">Dark Mode</button>
+    <h1 class="app-title">Simple Notes App</h1>
+
+    <!-- Note Form -->
+    <form action="{{ url_for('add_note') }}" method="POST">
+        <input type="text" name="title" placeholder="Note Title" required><br>
+        <textarea id="note-content" name="content" placeholder="Note Content" required></textarea><br>
+        <button type="submit" class="add-btn">Add Note</button>
+        <button id="view-notes">View Notes</button>
+    </form>
+
+    <div id="notes-container"></div>
+
+
+    <script>
+        function fetchNotes() {
+            fetch('/get_notes')
+                .then(response => response.json())
+                .then(data => {
+                    let container = document.getElementById("notes-container");
+                    container.innerHTML = ""; // Clear previous notes
+                    data.notes.forEach(note => {
+                        let div = document.createElement("div");
+                        div.innerHTML = `<h3>${note.title}</h3><p>${note.content}</p>`;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => console.error('Error fetching notes:', error));
+        }
+        </script>
+
+    
+</body>
+</html>
